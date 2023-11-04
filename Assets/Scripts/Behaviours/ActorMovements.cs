@@ -14,6 +14,6 @@ public class ActorMovements : MonoBehaviour
 
   public void Rotation(Vector2 rotateDirection)
   {
-    transform.up = (Vector2) Camera.main.ScreenToWorldPoint(rotateDirection); 
+    transform.up = (Vector2)Camera.main.ScreenToWorldPoint(rotateDirection); 
   }
 }
