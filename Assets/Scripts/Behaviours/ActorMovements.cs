@@ -14,7 +14,9 @@ public class ActorMovements : MonoBehaviour
 
   public void Rotation(Vector2 mousePosition)
   {
-    Vector2 direction = (mousePosition - (Vector2)this.transform.position);
-    transform.up = direction;
+    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePosition);
+    Vector3 targetDirection = mouseWorldPos - transform.position;
+    float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
   }
 }
