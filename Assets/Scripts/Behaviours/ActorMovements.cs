@@ -12,8 +12,9 @@ public class ActorMovements : MonoBehaviour
     Rotation(rotateDirection);
   }
 
-  public void Rotation(Vector2 rotateDirection)
+  public void Rotation(Vector2 mousePosition)
   {
-    transform.up = (Vector2)Camera.main.ScreenToWorldPoint(rotateDirection); 
+    Vector2 direction = (mousePosition - (Vector2)this.transform.position);
+    transform.up = direction;
   }
 }
