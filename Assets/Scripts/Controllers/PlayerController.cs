@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
   private InputController _inputController;
 
   [SerializeField] private ActorMovements _actorMovements;
+  [SerializeField] private Transform _rotateBody;
 
   private void Awake()
   {
@@ -32,6 +33,6 @@ public class PlayerController : MonoBehaviour
   private void Move(Vector2 direction)
   {
     Vector2 rotateDirection = _inputController.Player.Rotation.ReadValue<Vector2>();
-    _actorMovements.Move(direction, rotateDirection);
+    _actorMovements.Move(direction, rotateDirection, _rotateBody);
   }
 }
