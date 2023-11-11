@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actorMovements: {fileID: 1115481875}
+  _weapon: {fileID: 2011665187}
   _rotateBody: {fileID: 332256587}
 --- !u!50 &1115481877
 Rigidbody2D:
@@ -516,7 +517,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1306675581
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,5 +873,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 4309854768516987971, guid: 4834590d019a85f4195b7b42c6fe9739, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4309854768516987971, guid: 4834590d019a85f4195b7b42c6fe9739, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4834590d019a85f4195b7b42c6fe9739, type: 3}
+--- !u!4 &2011665185 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4309854768516987971, guid: 4834590d019a85f4195b7b42c6fe9739, type: 3}
+  m_PrefabInstance: {fileID: 2011665184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011665186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1971665005704758797, guid: 4834590d019a85f4195b7b42c6fe9739, type: 3}
+  m_PrefabInstance: {fileID: 2011665184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2011665187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011665186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f37965c3a37f94c9873b06d3df76a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingSpeed: 0.3
+  _projectile: {fileID: 6822102022600316967, guid: fdffefb9941d04548868916ff22220a2, type: 3}
+  _lounchPoint: {fileID: 2011665185}

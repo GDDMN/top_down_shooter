@@ -18,10 +18,12 @@ public class PlayerController : MonoBehaviour
   private void OnEnable()
   {
     _inputController.Enable();
+    _inputController.Player.Shoot.performed += context => Fire();
   }
 
   private void OnDisable()
   {
+    _inputController.Player.Shoot.performed -= context => Fire();
     _inputController.Disable();
   }
 
