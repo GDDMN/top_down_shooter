@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1209bf2b1b1fe04ab97bf1f10900484, type: 3}
-  m_Name: AmmoConfig
+  m_Name: PistolConfig
   m_EditorClassIdentifier: 
   _data:
-    _damage: 0
-    _dispersion: 0
-    _shootSpeed: 0
+    Damage: 0
+    Dispersion: 0
+    ShootSpeed: 0
+    Type: 1

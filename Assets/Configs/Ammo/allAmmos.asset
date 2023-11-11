@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f5700b998259b4c9cc06715ef5adfd, type: 3}
+  m_Name: allAmmos
+  m_EditorClassIdentifier: 
+  _allAmmos:
+  - {fileID: 11400000, guid: 1d5a83e33f54d8d4ab70301a03c7c012, type: 2}
+  - {fileID: 11400000, guid: 24d45efc4e7e48f428c4370d8937dfae, type: 2}
+  - {fileID: 11400000, guid: 4ef8dbeba5de4a442b87c8f342b6a6d2, type: 2}
+  - {fileID: 11400000, guid: 1c0e407092703594cbf0c8e5f9056019, type: 2}
+  - {fileID: 11400000, guid: cdf84878b45586c4788942bc292952e4, type: 2}
