@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
   private InputController _inputController;
 
   [SerializeField] private ActorMovements _actorMovements;
+  [SerializeField] private Weapon _weapon;
   [SerializeField] private Transform _rotateBody;
 
   private void Awake()
@@ -34,5 +35,13 @@ public class PlayerController : MonoBehaviour
   {
     Vector2 rotateDirection = _inputController.Player.Rotation.ReadValue<Vector2>();
     _actorMovements.Move(direction, rotateDirection, _rotateBody);
+  }
+
+  private void Fire()
+  {
+    if (_weapon == null)
+      return;
+
+    _weapon.Fire();
   }
 }
