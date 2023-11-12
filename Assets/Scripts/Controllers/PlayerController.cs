@@ -18,12 +18,16 @@ public class PlayerController : MonoBehaviour
   private void OnEnable()
   {
     _inputController.Enable();
-    _inputController.Player.Shoot.performed += context => Fire();
+
+    _inputController.Player.Shoot.started += context => Fire();
+    _inputController.Player.Shoot.canceled += context => StopShooting();
   }
 
   private void OnDisable()
   {
-    _inputController.Player.Shoot.performed -= context => Fire();
+    _inputController.Player.Shoot.started -= context => Fire();
+    _inputController.Player.Shoot.canceled -= context => StopShooting();
+
     _inputController.Disable();
   }
 
@@ -45,5 +49,13 @@ public class PlayerController : MonoBehaviour
       return;
 
     _weapon.Fire();
+  }
+
+  private void StopShooting()
+  {
+    if (_weapon == null)
+      return;
+
+    _weapon.StopShooting();
   }
 }

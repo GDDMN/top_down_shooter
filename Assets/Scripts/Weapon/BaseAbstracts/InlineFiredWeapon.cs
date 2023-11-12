@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class InlineFiredWeapon : Weapon
 {
@@ -7,7 +8,6 @@ public abstract class InlineFiredWeapon : Weapon
   public override void Fire()
   {
     IsFiring = true;
-    time = 1f;
   }
 
   public override void StopShooting()

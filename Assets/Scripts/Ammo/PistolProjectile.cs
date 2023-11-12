@@ -7,10 +7,10 @@ public class PistolProjectile : MonoBehaviour
   [SerializeField] private ParticleSystem _destroyParticle;
 
   private float _time = 0f;
-  private readonly float _lifetimeSpeed = 3f; 
+  private readonly float _lifetimeSpeed = 1f; 
   public void Init(Transform initPoint)
   {
-    _rigidbody.velocity = initPoint.up * (_speed * Time.deltaTime);
+    _rigidbody.velocity = initPoint.up * _speed ;
     StartCoroutine(DyingTime());
   }
 
@@ -27,7 +27,8 @@ public class PistolProjectile : MonoBehaviour
 
   private void Die()
   {
-    _destroyParticle.Play();
+    var destroyPartivle = Instantiate(_destroyParticle, transform.position, Quaternion.identity);
+    destroyPartivle.Play();
     Destroy(this.gameObject);
   }
 

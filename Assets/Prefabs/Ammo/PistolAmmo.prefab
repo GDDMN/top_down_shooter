@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1190046526096310832}
-  _speed: 500
-  _destroyParticle: {fileID: 0}
+  _speed: 40
+  _destroyParticle: {fileID: 19821674, guid: 8368975de5593844bbfaf74e342fb326, type: 3}
 --- !u!50 &1190046526096310832
 Rigidbody2D:
   serializedVersion: 4

@@ -3,6 +3,11 @@ public class PistolWeapon : InlineFiredWeapon
 {
   [SerializeField] private PistolProjectile _projectile;
   [SerializeField] private Transform _lounchPoint;
+
+  private void LateUpdate()
+  {
+    Shooting();
+  }
   public override void Shooting()
   {
     if(time < 1f)
@@ -11,8 +16,11 @@ public class PistolWeapon : InlineFiredWeapon
       return;
     }
 
-    time = 0f;
+    if (!IsFiring)
+      return;
+
     var projectile = Instantiate(_projectile, _lounchPoint.position, _lounchPoint.rotation);
     projectile.Init(_lounchPoint);
+    time = 0f;
   }
 }
