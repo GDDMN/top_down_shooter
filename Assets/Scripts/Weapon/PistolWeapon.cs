@@ -2,7 +2,6 @@ using UnityEngine;
 public class PistolWeapon : InlineFiredWeapon
 {
   [SerializeField] private PistolProjectile _projectile;
-  [SerializeField] private Transform _lounchPoint;
   [SerializeField] private ParticleSystem _lounchParticle;
 
   private void LateUpdate()

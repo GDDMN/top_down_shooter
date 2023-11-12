@@ -5,12 +5,8 @@ using UnityEngine;
 public class SniperWeapon : InlineFiredWeapon
 {
   [SerializeField] private LineRenderer _lineRenderer;
-  [SerializeField] private Transform _lounchPoint;
-
   [SerializeField] private ParticleSystem _lounchParticle;
   [SerializeField] private ParticleSystem _hitExplosion;
-  private float shootRnge = 100f;
-
   private void Start()
   {
     time = 0f;
