@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6822102022600316967}
   - component: {fileID: 1190046526096310832}
   - component: {fileID: 8077266405803934112}
+  - component: {fileID: 7679918274684913185}
   m_Layer: 0
   m_Name: PistolAmmo
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1190046526096310832}
   _speed: 500
+  _destroyParticle: {fileID: 0}
 --- !u!50 &1190046526096310832
 Rigidbody2D:
   serializedVersion: 4
@@ -230,3 +232,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!58 &7679918274684913185
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6822102022600316966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
