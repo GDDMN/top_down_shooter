@@ -3,6 +3,7 @@ public class PistolWeapon : InlineFiredWeapon
 {
   [SerializeField] private PistolProjectile _projectile;
   [SerializeField] private Transform _lounchPoint;
+  [SerializeField] private ParticleSystem _lounchParticle;
 
   private void LateUpdate()
   {
@@ -19,6 +20,7 @@ public class PistolWeapon : InlineFiredWeapon
     if (!IsFiring)
       return;
 
+    _lounchParticle.Play();
     var projectile = Instantiate(_projectile, _lounchPoint.position, _lounchPoint.rotation);
     projectile.Init(_lounchPoint);
     time = 0f;
