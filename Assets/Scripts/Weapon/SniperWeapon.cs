@@ -8,6 +8,7 @@ public class SniperWeapon : InlineFiredWeapon
   [SerializeField] private Transform _lounchPoint;
 
   [SerializeField] private ParticleSystem _lounchParticle;
+  [SerializeField] private ParticleSystem _hitExplosion;
   private float shootRnge = 100f;
 
   private void Start()
@@ -43,6 +44,9 @@ public class SniperWeapon : InlineFiredWeapon
     IsFiring = false;
 
     RaycastHit2D hit = Physics2D.Raycast(_lounchPoint.position, _lounchPoint.up);
+    var hitExplosion = Instantiate(_hitExplosion, hit.point, Quaternion.identity);
+    Destroy(hitExplosion, 2f);
+
     Debug.Log(hit.transform.name);
     _lineRenderer.SetPosition(0, _lounchPoint.position);
     _lineRenderer.SetPosition(1, hit.point);

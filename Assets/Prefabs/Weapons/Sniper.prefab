@@ -104,6 +104,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 8328336456025639017}
   _lounchPoint: {fileID: 141430102728131032}
   _lounchParticle: {fileID: 8865971639052914410}
+  _hitExplosion: {fileID: 19835106, guid: 9b580bbaa32fd934eb7922f1126eeaf1, type: 3}
 --- !u!120 &8328336456025639017
 LineRenderer:
   m_ObjectHideFlags: 0
