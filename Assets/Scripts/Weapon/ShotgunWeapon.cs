@@ -25,17 +25,22 @@ public class ShotgunWeapon : SectoredFiredWeapon
     SetSpread();
     _lounchParticle.Play();
 
-    float f = 0f;
-
     PistolProjectile[] allBullets = new PistolProjectile[5];
+    Vector3[] bulletDirections = new Vector3[5];
 
+    float f = 0f;
     for(int i=0; i < 5; i++, f += 0.5f)
     {
       var bullet = Instantiate(_projectile, _lounchPoint.position, _lounchPoint.rotation);
-      Vector3 direction;
-      direction = spreadAngleB + (spreadAngleA * f);
+      Vector3 direction = spreadAngleB + (spreadAngleA * f);
 
-      bullet.Init(_lounchPoint, direction);
+      allBullets[i] = bullet;
+      bulletDirections[i] = direction;
+    }
+
+    for(int i=0;i<5;i++)
+    {
+      allBullets[i].Init(_lounchPoint, bulletDirections[i]);
     }
 
     time = 0f;

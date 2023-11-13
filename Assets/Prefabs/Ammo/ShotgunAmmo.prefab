@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6822102022600316966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9771983, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1190046526096310832}
-  _speed: 1
+  _speed: 20
   _destroyParticle: {fileID: 19821674, guid: 8368975de5593844bbfaf74e342fb326, type: 3}
 --- !u!50 &1190046526096310832
 Rigidbody2D:
@@ -175,29 +175,29 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.011245728
-        value: 0.3
-        inSlope: -1.684087
-        outSlope: -1.684087
+        value: 0.15
+        inSlope: -0.19031371
+        outSlope: -0.19031371
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.54776514
+        outWeight: 0.27173904
       - serializedVersion: 3
-        time: 0.3
+        time: 0.45102215
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.0698532
+        outSlope: -0.0698532
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.16991949
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9839345, g: 1, b: 0.15471691, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
