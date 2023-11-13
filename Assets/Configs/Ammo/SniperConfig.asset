@@ -18,3 +18,4 @@ MonoBehaviour:
     ShootSpeed: 0
     Type: 4
     WeaponPrefab: {fileID: 7496806227754236414, guid: 4b88863cab3fed44aad9777c7d74463d, type: 3}
+    Icon: {fileID: 310970895, guid: faca5ac95e0bde74aad97e126180a072, type: 3}

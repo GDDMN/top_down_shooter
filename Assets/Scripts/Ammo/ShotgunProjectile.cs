@@ -31,6 +31,7 @@ public class ShotgunProjectile : MonoBehaviour
   {
     var destroyPartivle = Instantiate(_destroyParticle, transform.position, Quaternion.identity);
     destroyPartivle.Play();
+    Destroy(destroyPartivle.gameObject, 0.5f);
     Destroy(this.gameObject);
   }
 

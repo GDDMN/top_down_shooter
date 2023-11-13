@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct AmmoData
@@ -9,4 +11,5 @@ public struct AmmoData
   public int ShootSpeed;
   public AmmoType Type;
   public Weapon WeaponPrefab;
+  public Sprite Icon;
 }
