@@ -100,8 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lounchPoint: {fileID: 141430102728131032}
-  shootRadius: 1.34
-  shootAngle: 33
+  shootRadius: 2
+  shootAngle: 30
+  spreadAngleA: {x: 0.9659258, y: -0.25881904, z: 0}
+  spreadAngleB: {x: 0.9659258, y: 0.25881904, z: 0}
+  shootingSpeed: 0.3
+  _projectile: {fileID: 6822102022600316967, guid: fdffefb9941d04548868916ff22220a2, type: 3}
+  _lounchParticle: {fileID: 19849376, guid: 8f6740ea956941542991448a9a0e8bd7, type: 3}
 --- !u!1 &3979079321916040210
 GameObject:
   m_ObjectHideFlags: 0

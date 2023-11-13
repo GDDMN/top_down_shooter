@@ -14,6 +14,13 @@ public class PistolProjectile : MonoBehaviour
     StartCoroutine(DyingTime());
   }
 
+  public void Init(Transform initPoint, Vector3 direction, int indexOfLounchBullet)
+  {
+    Vector3 forwardDirection = new Vector3(direction.x, direction.y, 0f);
+    _rigidbody.velocity = (initPoint.up + forwardDirection) * _speed;
+    StartCoroutine(DyingTime());
+  }
+
   private IEnumerator DyingTime()
   {
     while(_time <= 1f)
