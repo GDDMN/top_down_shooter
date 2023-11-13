@@ -14,9 +14,9 @@ public abstract class SectoredFiredWeapon : Weapon
   public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
   {
     if(!angleIsGlobal)
-      angleInDegrees += _lounchPoint.eulerAngles.x;
+      angleInDegrees += _lounchPoint.eulerAngles.z;
 
-    return new Vector3(Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0f);
+    return new Vector3(-Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), 0f);
   }
   public void SetSpread()
   {

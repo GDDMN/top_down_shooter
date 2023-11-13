@@ -22,12 +22,20 @@ public class ShotgunWeapon : SectoredFiredWeapon
     if (!IsFiring)
       return;
 
+    SetSpread();
     _lounchParticle.Play();
-    for(int i=2; i < 6; i++)
+
+    float f = 0f;
+
+    PistolProjectile[] allBullets = new PistolProjectile[5];
+
+    for(int i=0; i < 5; i++, f += 0.5f)
     {
       var bullet = Instantiate(_projectile, _lounchPoint.position, _lounchPoint.rotation);
-      Vector3 direction = spreadAngleB - (spreadAngleA / (i - 1));
-      bullet.Init(_lounchPoint, direction, i);
+      Vector3 direction;
+      direction = spreadAngleB + (spreadAngleA * f);
+
+      bullet.Init(_lounchPoint, direction);
     }
 
     time = 0f;

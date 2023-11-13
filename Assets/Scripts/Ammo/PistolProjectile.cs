@@ -14,10 +14,9 @@ public class PistolProjectile : MonoBehaviour
     StartCoroutine(DyingTime());
   }
 
-  public void Init(Transform initPoint, Vector3 direction, int indexOfLounchBullet)
+  public void Init(Transform initPoint, Vector3 direction)
   {
-    Vector3 forwardDirection = new Vector3(direction.x, direction.y, 0f);
-    _rigidbody.velocity = (initPoint.up + forwardDirection) * _speed;
+    _rigidbody.velocity = (initPoint.up + direction) * _speed;
     StartCoroutine(DyingTime());
   }
 
