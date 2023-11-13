@@ -105,7 +105,7 @@ MonoBehaviour:
   spreadAngleA: {x: 0.9659259, y: -0.25881898, z: 0}
   spreadAngleB: {x: 0.9659258, y: 0.258819, z: 0}
   shootingSpeed: 1
-  _projectile: {fileID: 6822102022600316967, guid: 615aa14d47558fd42a89585f52eddac3, type: 3}
+  _projectile: {fileID: 202126415293990946, guid: 615aa14d47558fd42a89585f52eddac3, type: 3}
   _lounchParticle: {fileID: 5562295575867871469}
 --- !u!1 &3979079321916040210
 GameObject:

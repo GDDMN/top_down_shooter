@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShotgunWeapon : SectoredFiredWeapon
 {
-  [SerializeField] private PistolProjectile _projectile;
+  [SerializeField] private ShotgunProjectile _projectile;
   [SerializeField] private ParticleSystem _lounchParticle;
 
   private void LateUpdate()
@@ -25,7 +25,7 @@ public class ShotgunWeapon : SectoredFiredWeapon
     SetSpread();
     _lounchParticle.Play();
 
-    PistolProjectile[] allBullets = new PistolProjectile[5];
+    ShotgunProjectile[] allBullets = new ShotgunProjectile[5];
     Vector3[] bulletDirections = new Vector3[5];
 
     float f = 0f;

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1190046526096310832}
   - component: {fileID: 8077266405803934112}
   - component: {fileID: 7679918274684913185}
-  - component: {fileID: 202126415293990946}
+  - component: {fileID: -8697253806929714814}
   m_Layer: 0
-  m_Name: ShotgunAmmo
+  m_Name: MashinegunAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
---- !u!114 &202126415293990946
+--- !u!114 &-8697253806929714814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6822102022600316966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ef299789907e947b0215a09f22f317, type: 3}
+  m_Script: {fileID: 11500000, guid: de6f751d7af16a240a906abde9d06c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1190046526096310832}
