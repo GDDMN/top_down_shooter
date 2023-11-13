@@ -8,4 +8,5 @@ public struct AmmoData
   public int Dispersion;
   public int ShootSpeed;
   public AmmoType Type;
+  public Weapon WeaponPrefab;
 }

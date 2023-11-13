@@ -17,3 +17,4 @@ MonoBehaviour:
     Dispersion: 0
     ShootSpeed: 0
     Type: 4
+    WeaponPrefab: {fileID: 7496806227754236414, guid: 4b88863cab3fed44aad9777c7d74463d, type: 3}

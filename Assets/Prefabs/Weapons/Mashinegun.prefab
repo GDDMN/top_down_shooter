@@ -107,8 +107,9 @@ MonoBehaviour:
   shootingSpeed: 10
   _projectile: {fileID: -8697253806929714814, guid: 37738c5ff2aeb504b9e20fca3ba7addd, type: 3}
   _lounchParticle: {fileID: 9013801571406127530}
-  _overheatSpeed: 2
+  _overheatSpeed: 7
   _coolingDownSpeed: 1
+  _overheat: 0
 --- !u!1 &3979079321916040210
 GameObject:
   m_ObjectHideFlags: 0
