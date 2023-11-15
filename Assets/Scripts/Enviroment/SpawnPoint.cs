@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour, IInteractable
 {
   [SerializeField] private AmmoType _ammoType;
   [SerializeField] private SpriteRenderer _icon;
+
+  private void OnDrawGizmos()
+  {
+    _icon.sprite = G.Instance.Configs.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
+  }
   private void Start()
   {
     _icon.sprite = G.Instance.Configs.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
