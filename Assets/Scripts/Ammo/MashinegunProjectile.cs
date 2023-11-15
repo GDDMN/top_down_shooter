@@ -1,23 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class MashinegunProjectile : MonoBehaviour
+public class MashinegunProjectile : Projectile
 {
-  [SerializeField] private Rigidbody2D _rigidbody;
-  [SerializeField] private float _speed;
-  [SerializeField] private ParticleSystem _destroyParticle;
-
-  private float _time = 0f;
-  private readonly float _lifetimeSpeed = 2f;
-  Vector2 _direction = new Vector2();
-  public void Init(Transform initPoint, Vector3 direction)
+  private Vector2 _direction = new Vector2();
+  private int _rikoshets = 0;
+  public override void Init(Transform initPoint)
+  {
+    throw new System.NotImplementedException();
+  }
+  public override void Init(Transform initPoint, Vector3 direction)
   {
     _direction = (initPoint.up + direction) * _speed;
     _rigidbody.velocity = _direction;
     StartCoroutine(DyingTime());
   }
 
-  private IEnumerator DyingTime()
+  protected override IEnumerator DyingTime()
   {
     while (_time <= 1f)
     {
@@ -28,7 +27,7 @@ public class MashinegunProjectile : MonoBehaviour
     Die();
   }
 
-  private void Die()
+  protected override void Die()
   {
     var destroyPartivle = Instantiate(_destroyParticle, transform.position, Quaternion.identity);
     destroyPartivle.Play();
@@ -38,6 +37,34 @@ public class MashinegunProjectile : MonoBehaviour
 
   private void OnCollisionEnter2D(Collision2D collision)
   {
+    var hurtable = collision.gameObject.GetComponent<IHurtable>();
+    
+    if (collision.gameObject.layer == 16)
+    {
+      Rikoshet(collision);
+      return;
+    }
+
+    if (hurtable == null)
+      return;
+
+    if(collision.gameObject.layer == 11)
+      Hit(hurtable);    
+  }
+
+  protected override void Hit(IHurtable hurtable)
+  {
+    hurtable.HitProjectile(this);
+    Die();
+  }
+
+  private void Rikoshet(Collision2D collision)
+  {
+    _rikoshets++;
+    
+    if(_rikoshets >= 2)
+      Die();
+    
     var destroyPartivle = Instantiate(_destroyParticle, transform.position, Quaternion.identity);
     destroyPartivle.Play();
 

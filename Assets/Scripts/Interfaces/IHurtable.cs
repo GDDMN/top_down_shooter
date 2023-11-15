@@ -1,5 +1,7 @@
 using UnityEngine;
 public interface IHurtable
 {
-  public void Hit(Collision2D collision);
+  public void HitProjectile(Projectile projectile);
+  
+  public void HitRay(int damage);
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1190046526096310832}
   - component: {fileID: 8077266405803934112}
   - component: {fileID: 7679918274684913185}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PistolAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1190046526096310832}
   _speed: 40
   _destroyParticle: {fileID: 19821674, guid: 8368975de5593844bbfaf74e342fb326, type: 3}
+  _damage: 2
 --- !u!50 &1190046526096310832
 Rigidbody2D:
   serializedVersion: 4

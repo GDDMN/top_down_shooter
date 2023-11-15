@@ -36,17 +36,24 @@ public class SniperWeapon : InlineFiredWeapon
       return;
 
     _lounchParticle.Stop();
-    time = 0f;
     IsFiring = false;
 
     RaycastHit2D hit = Physics2D.Raycast(_lounchPoint.position, _lounchPoint.up);
     var hitExplosion = Instantiate(_hitExplosion, hit.point, Quaternion.identity);
     Destroy(hitExplosion, 2f);
 
+    if(hit.transform.gameObject.GetComponent<IHurtable>() != null)
+    {
+      var hurtable = hit.transform.gameObject.GetComponent<IHurtable>();
+      int damage = (int)time * 4;
+      hurtable.HitRay(damage);
+    }
+
     Debug.Log(hit.transform.name);
     _lineRenderer.SetPosition(0, _lounchPoint.position);
     _lineRenderer.SetPosition(1, hit.point);
     StartCoroutine(LaserLifetime());
+    time = 0f;
   }
 
   private IEnumerator LaserLifetime()
