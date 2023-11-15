@@ -45,7 +45,7 @@ public class SniperWeapon : InlineFiredWeapon
     if(hit.transform.gameObject.GetComponent<IHurtable>() != null)
     {
       var hurtable = hit.transform.gameObject.GetComponent<IHurtable>();
-      int damage = (int)time * 4;
+      int damage = (int)(time * 4);
       hurtable.HitRay(damage);
     }
 

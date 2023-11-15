@@ -18,6 +18,9 @@ public class ActorHurt : MonoBehaviour, IHurtable
   }
   public void HitRay(int damage)
   {
+    if (damage < 1)
+      return;
+
     GetDamage(damage);
 
     if (_hp <= 0)

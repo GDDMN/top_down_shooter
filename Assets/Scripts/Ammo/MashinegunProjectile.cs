@@ -34,7 +34,6 @@ public class MashinegunProjectile : Projectile
     Destroy(destroyPartivle.gameObject, 0.5f);
     Destroy(this.gameObject);
   }
-
   private void OnCollisionEnter2D(Collision2D collision)
   {
     var hurtable = collision.gameObject.GetComponent<IHurtable>();
@@ -54,7 +53,7 @@ public class MashinegunProjectile : Projectile
 
   protected override void Hit(IHurtable hurtable)
   {
-    hurtable.HitProjectile(this);
+    hurtable.HitProjectile(this); 
     Die();
   }
 
