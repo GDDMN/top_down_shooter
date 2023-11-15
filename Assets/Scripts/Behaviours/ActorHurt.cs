@@ -4,6 +4,7 @@ public class ActorHurt : MonoBehaviour, IHurtable
 {
   [SerializeField] private int _hp = 4;
   [Header("Visual")]
+
   [SerializeField] private ParticleSystem _hitFX;
   [SerializeField] private ParticleSystem _deathFX;
 

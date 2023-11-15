@@ -4,7 +4,7 @@ using UnityEngine;
 public class MashinegunProjectile : Projectile
 {
   private Vector2 _direction = new Vector2();
-  private int _rikoshets = 0;
+  private int _rikochets = 0;
   public override void Init(Transform initPoint)
   {
     throw new System.NotImplementedException();
@@ -40,7 +40,7 @@ public class MashinegunProjectile : Projectile
     
     if (collision.gameObject.layer == 16)
     {
-      Rikoshet(collision);
+      Rikochet(collision);
       return;
     }
 
@@ -57,11 +57,11 @@ public class MashinegunProjectile : Projectile
     Die();
   }
 
-  private void Rikoshet(Collision2D collision)
+  private void Rikochet(Collision2D collision)
   {
-    _rikoshets++;
+    _rikochets++;
     
-    if(_rikoshets >= 2)
+    if(_rikochets >= 2)
       Die();
     
     var destroyPartivle = Instantiate(_destroyParticle, transform.position, Quaternion.identity);
