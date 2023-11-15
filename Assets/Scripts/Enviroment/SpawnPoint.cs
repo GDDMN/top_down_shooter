@@ -17,9 +17,14 @@ public class SpawnPoint : MonoBehaviour, IInteractable
   {
     player.PickUpWeapon(_ammoType);
   }
-
-  private void OnCollisionEnter2D(Collision2D collision)
+  private void OnTriggerEnter2D(Collider2D collision)
   {
-    Interact(collision.transform.GetComponent<PlayerController>());
+    var controller = collision.transform.GetComponent<PlayerController>();
+
+    if (controller == null)
+      return;
+
+    Interact(controller);
+
   }
 }
