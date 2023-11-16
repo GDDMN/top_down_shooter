@@ -668,6 +668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3589938935300275680, guid: c354ec3dad14731479ee28dc28d1fd0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6855817179597905020, guid: c354ec3dad14731479ee28dc28d1fd0f, type: 3}
       propertyPath: _timeToPickUp
       value: 1
@@ -718,6 +722,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6855817179597905283, guid: c354ec3dad14731479ee28dc28d1fd0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8695576007596215568, guid: c354ec3dad14731479ee28dc28d1fd0f, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
