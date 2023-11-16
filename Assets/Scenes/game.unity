@@ -2114,6 +2114,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7662618191310334561, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662618191310334563, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9797
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662618191310334563, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9866
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662618191310334563, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662618191310334563, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6292
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662618191310334572, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7662618192971680452, guid: ee74b16c93970604f898743d17c71ccf, type: 3}
       propertyPath: m_Name
       value: Level (1)
@@ -2743,7 +2767,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.14996442, g: 0.183364, b: 0.23584908, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2760,7 +2784,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 23
+  orthographic size: 21
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
