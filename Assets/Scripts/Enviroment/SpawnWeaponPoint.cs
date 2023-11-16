@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class SpawnPoint : MonoBehaviour, IInteractable
+public class SpawnWeaponPoint : MonoBehaviour, IInteractable
 {
   [SerializeField] private AmmoType _ammoType;
   [SerializeField] private float _timeToPickUp;
