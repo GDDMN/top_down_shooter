@@ -15,11 +15,11 @@ public class SpawnWeaponPoint : MonoBehaviour, IInteractable
   private bool _isActive = true;
   private void OnDrawGizmos()
   {
-    _icon.sprite = G.Instance.Configs.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
+    _icon.sprite = Configs.Instance.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
   }
   private void Start()
   {
-    _icon.sprite = G.Instance.Configs.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
+    _icon.sprite = Configs.Instance.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
   }
   public void Interact(PlayerController player)
   {

@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
   public void PickUpWeapon(AmmoType type)
   {
     Destroy(_weapon.gameObject);
-    _weapon = Instantiate(G.Instance.Configs.Ammos.GetAmmoByEnum(type).Data.WeaponPrefab, _rotateBody.transform);
+    _weapon = Instantiate(Configs.Instance.Ammos.GetAmmoByEnum(type).Data.WeaponPrefab, _rotateBody.transform);
     _weapon.transform.SetParent(_rotateBody);
   }
 }

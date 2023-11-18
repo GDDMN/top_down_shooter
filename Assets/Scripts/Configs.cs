@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Configs : MonoBehaviour
+public class Configs : Singleton<Configs>
 {
   public AmmoConfigs Ammos;
 }
