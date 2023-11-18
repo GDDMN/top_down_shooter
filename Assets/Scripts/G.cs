@@ -22,6 +22,7 @@ public class G : Singleton<G>
   private IEnumerator Init()
   {
     UI.Init();
+    UI.CreateWindow<PlayerHudWindow>();
     yield return null;
   }
 }

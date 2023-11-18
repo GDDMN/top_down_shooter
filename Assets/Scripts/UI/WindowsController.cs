@@ -1,18 +1,44 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class WindowsController : MonoBehaviour
 {
   public event Action<Window> OnCreateWindow;
 
-  [SerializeField] private GameObject _windowContainer = null;
-  [SerializeField] private List<Window> _avaliableWindows = new List<Window>();
+  [SerializeField] private Transform _windowContainer = null;
+  
+  [Space]
+  [Header("Canvas:")]
+  [SerializeField] private Canvas _canvas = null;
+  [SerializeField] private float _planeDistance = 1f;
+  [SerializeField] private int _sortingOrder = 10;
 
   private Dictionary<Type, Window> _windowsPool = new Dictionary<Type, Window>();
-  
+  private readonly List<Window> _avaliableWindows = new List<Window>();
+
+  public Canvas Canvas => _canvas;
+
+  public void Init()
+  {
+    GetAvaliableWindows();
+    SetCanvasSettings();
+    
+  }
+
+  private void GetAvaliableWindows()
+  {
+    Window[] windows = Resources.LoadAll<Window>("UI/Windows/");
+    _avaliableWindows.AddRange(windows);
+  }
+
+  private void SetCanvasSettings()
+  {
+    _canvas.planeDistance = _planeDistance;
+    _canvas.sortingOrder = _sortingOrder;
+  }
   public T Create<T>() where T : Window
   {
     return (T)Create(typeof(T));
@@ -26,9 +52,9 @@ public class WindowsController : MonoBehaviour
       window = _windowsPool[window_type];
     else
     {
-      window = UnityEngine.Object.Instantiate(_avaliableWindows.Find(w => w.GetType() == window_type));
-      window.gameObject.transform.SetParent(_windowContainer.transform, false);
-      window.gameObject.SetActive(false);
+      window = Instantiate(_avaliableWindows.Find(w => w.GetType() == window_type));
+      _windowsPool.Add(window_type, window);
+      window.gameObject.transform.SetParent(_windowContainer, false);
     }
 
     if(window == null)
