@@ -6,6 +6,6 @@ public class Configs : Singleton<Configs>
 
   private void Start()
   {
-    UI.Init();
+    
   }
 }

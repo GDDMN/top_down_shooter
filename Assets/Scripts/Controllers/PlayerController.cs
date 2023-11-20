@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class PlayerController : MonoBehaviour
 {
+  public event Action<Weapon> OnPickUpWeapon;
+  public event Action OnInit;
+
   private InputController _inputController;
 
   [SerializeField] private ActorMovements _actorMovements;
@@ -14,7 +17,20 @@ public class PlayerController : MonoBehaviour
   {
     _inputController = new InputController();
   }
+  private void Start()
+  {
+    Init();
+  }
+  public void Init()
+  {
+    //Enviroment initialization
+    var hudwindow = UI.CreateWindow<PlayerHudWindow>();
+    hudwindow.SetObservable(this);
+    OnPickUpWeapon += hudwindow.UpdateWeaponUI;
 
+    //Player initialization
+    PickUpWeapon(AmmoType.PISTOL);
+  }
   private void OnEnable()
   {
     _inputController.Enable();
@@ -63,6 +79,9 @@ public class PlayerController : MonoBehaviour
   {
     Destroy(_weapon.gameObject);
     _weapon = Instantiate(Configs.Instance.Ammos.GetAmmoByEnum(type).Data.WeaponPrefab, _rotateBody.transform);
+    _weapon.Init(Configs.Instance.Ammos.GetAmmoByEnum(type).Data);
     _weapon.transform.SetParent(_rotateBody);
+
+    OnPickUpWeapon?.Invoke(_weapon);
   }
 }

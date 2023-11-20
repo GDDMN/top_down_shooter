@@ -10,11 +10,16 @@ public abstract class Weapon : MonoBehaviour
   protected AmmoData _data;
   protected bool IsFiring = false;
 
+  public AmmoData Data => _data;
   public Transform LounchPoint => _lounchPoint;
   public abstract void Fire();
   public abstract void StopShooting();
   public abstract void Shooting();
 
+  public void Init(AmmoData data)
+  {
+    _data = data;
+  }
   public void ActivateRightSprite()
   {
     right.enabled = true;

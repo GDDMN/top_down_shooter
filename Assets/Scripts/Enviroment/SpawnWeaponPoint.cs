@@ -13,10 +13,6 @@ public class SpawnWeaponPoint : MonoBehaviour, IInteractable
   
   [SerializeField, Range(0f, 1f)]private float _time = 0;
   private bool _isActive = true;
-  private void OnDrawGizmos()
-  {
-    _icon.sprite = Configs.Instance.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;
-  }
   private void Start()
   {
     _icon.sprite = Configs.Instance.Ammos.GetAmmoByEnum(_ammoType).Data.Icon;

@@ -8,12 +8,11 @@ public class UI
   public static Canvas Canvas => _windowController.Canvas; 
 
   private static WindowsController _windowController;
-  
+
   public static void Init()
   {
     LoadController();
   }
-
 
   private static void LoadController()
   {

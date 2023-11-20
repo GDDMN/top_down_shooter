@@ -64,7 +64,6 @@ public class WindowsController : MonoBehaviour
     }
 
     return window;
-
   }
 
 }

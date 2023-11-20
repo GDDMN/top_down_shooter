@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class G : Singleton<G>
 {
+  [SerializeField] private Configs _configs;
 
   private readonly string _initSceneName = "game";
-  private void Start()
+
+  public Configs Configs => _configs;
+  private void Awake()
   {
     Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    UI.Init();
     StartCoroutine(SafeInit());
   }
 
@@ -21,8 +25,6 @@ public class G : Singleton<G>
 
   private IEnumerator Init()
   {
-    UI.Init();
-    UI.CreateWindow<PlayerHudWindow>();
     yield return null;
   }
 }
